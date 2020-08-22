@@ -2,7 +2,7 @@ from sys import argv
 import re
 
 def make_regex(c):
-    return re.compile(f'[^{c}]')
+    return f'[^{c}]'
 
 DICT = '/usr/share/dict/words';
 c = argv[1]
