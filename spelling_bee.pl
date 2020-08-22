@@ -6,7 +6,7 @@ use experimental qw(signatures);
 use autodie;
 
 my $dict = '/usr/share/dict/words';
-my @c = @ARGV;
+my @c = split //, $ARGV[0];
 my $middle = $c[0];
 my $re = make_regex(@c);
 
