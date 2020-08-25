@@ -5,7 +5,7 @@
 #include <set>
 
 using namespace std;
-const string DICT = "/usr/share/dict/words";
+const string DICT = "/usr/share/dict/american-english-large";
 
 int main(int argc, char *argv[]) {
     const string s(argv[1]);

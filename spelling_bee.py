@@ -4,7 +4,7 @@ import re
 def make_regex(c):
     return f'[^{c}]'
 
-DICT = '/usr/share/dict/words';
+DICT = '/usr/share/dict/american-english-large';
 c = argv[1]
 middle = c[0]
 regex = make_regex(c)
