@@ -25,16 +25,24 @@ int main(int argc, char *argv[]) {
         if (line.length() < 4)
             continue;
         
+        set<char> found;
         bool found_middle = false;
         bool found_bad_char = false;
         for (const char c : line) {
             if (chars.find(c) == chars.end()) {
                 found_bad_char = true;
                 break;
-            } else if (c == middle)
-                found_middle = true;
+            } else {
+                found.insert(c);
+                if (c == middle)
+                    found_middle = true;
+            }
         }
-        if (found_middle && !found_bad_char)
-            cout << line << endl;
+        if (found_middle && !found_bad_char) {
+            cout << line;
+            if (found.size() == 7)
+                cout << " (pangram)";
+            cout << endl;
+        }
     }
 }
