@@ -4,6 +4,9 @@ import re
 def make_regex(c):
     return f'[^{c}]'
 
+def is_pangram(s):
+    return len({ c for c in s }) == 7
+
 DICT = '/usr/share/dict/american-english-large';
 c = argv[1]
 middle = c[0]
@@ -14,4 +17,4 @@ with open(DICT) as f:
         line = line.rstrip()
         if len(line) < 4 or middle not in line or re.search(regex, line):
             continue
-        print(line)
+        print(f'{line} (pangram)' if is_pangram(line) else line)

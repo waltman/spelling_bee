@@ -16,10 +16,16 @@ while (<$fh>) {
     next unless length >= 4;
     next unless /$middle/;
     next if /$re/;
-    say;
+    say is_pangram($_) ? "$_ (pangram)" : $_;
 }
 
 sub make_regex(@c) {
     my $letters = join "", @c;
     return qr([^$letters]);
 }
+
+sub is_pangram($s) {
+    my %h = map {$_ => 1} split //, $s;
+    return scalar keys %h == 7;
+}
+
