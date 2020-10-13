@@ -5,6 +5,8 @@ def make_regex(c):
     return f'[^{c}]'
 
 def is_pangram(s):
+    if len(s) < 7:
+        return False;
     return len({ c for c in s }) == 7
 
 DICT = '/usr/share/dict/american-english-large';

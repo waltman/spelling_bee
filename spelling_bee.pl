@@ -25,6 +25,7 @@ sub make_regex(@c) {
 }
 
 sub is_pangram($s) {
+    return 0 if length($s) < 7;
     my %h = map {$_ => 1} split //, $s;
     return scalar keys %h == 7;
 }
