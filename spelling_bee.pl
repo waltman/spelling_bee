@@ -5,7 +5,7 @@ use feature qw(:5.32);
 use experimental qw(signatures);
 use autodie;
 
-my $dict = '/usr/share/dict/american-english-large';
+my $dict = '/usr/share/dict/american-english-huge';
 my @c = split //, $ARGV[0];
 my $middle = $c[0];
 my $re = make_regex(@c);
